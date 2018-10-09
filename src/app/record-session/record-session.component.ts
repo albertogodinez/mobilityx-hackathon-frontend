@@ -21,7 +21,7 @@ export class RecordSessionComponent implements OnInit, OnDestroy {
   @Output() showDashboard: EventEmitter<void> = new EventEmitter<void>();
   constructor(
     private sharedService: SharedService,
-    private speechRecognitionService: SpeechRecognitionService,
+    public speechRecognitionService: SpeechRecognitionService,
   ) { }
 
   ngOnInit() {
@@ -82,7 +82,7 @@ export class RecordSessionComponent implements OnInit, OnDestroy {
     this.session = new Session();
     this.session.transcript = this.speechData;
     this.session.sessionId = Math.floor(Math.random() * 1000);
-    if(this.speechData.length > 0) {
+    if (this.speechData.length > 0) {
       this.words = this.speechData.split(' ');
     }
     this.session.words = this.words;
