@@ -1,0 +1,28 @@
+<div>
+  <h1>Login</h1>
+  <form class="form-inline" (ngSubmit)="login()" [formGroup]="loginForm">
+    <div class="col-auto">
+      <input type="text" 
+      class="form-control" 
+      placeholder="Username" 
+      [formControl]="usernameCtrl" 
+      >
+      <div *ngIf="loginSubmitted && usernameCtrl.hasError('required')" class="invalid-feedback">
+        Username is required
+      </div>
+    </div>
+    <div class="col-auto">
+      <input type="password" 
+      class="form-control" 
+      placeholder="Password" 
+      [formControl]="passwordCtrl" 
+      >
+      <div *ngIf="loginSubmitted && passwordCtrl.hasError('required')" class="invalid-feedback">
+        <div *ngIf="passwordCtrl.hasError('required')">Password is required</div>
+      </div>
+    </div>
+  </form>
+  <div class="col-auto">
+    <button type="submit" (click)="login()" class="btn btn-primary mb-2">Login</button>
+  </div>
+</div>

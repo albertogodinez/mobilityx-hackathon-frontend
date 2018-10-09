@@ -1,0 +1,15 @@
+.example-card {
+  max-width: 256px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+}
+
+div[fxLayoutAlign] { padding:10px; padding-left: 25px; padding-top:15px;}
+/* div[fxFlex] { padding-bottom: 30px;} */

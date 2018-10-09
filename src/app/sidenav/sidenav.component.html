@@ -1,0 +1,34 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav [mode]="push">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon aria-label="Example icon-button with a menu icon">menu</mat-icon>
+    </button>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <button mat-stroked-button color="primary">Connect with a mentor</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+          <button mat-stroked-button color="primary">Team Achievements</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+         <!--TODO: Add this as a chatbot option-->
+          <button mat-stroked-button color="primary">Chat with HR</button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+          <button mat-stroked-button color="primary">Training</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="example-radio-group">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon aria-label="Example icon-button with a menu icon">menu</mat-icon>
+    </button>
+    <div *ngIf="showDashboard===true">
+      <app-dashboard (recordPressed)="recordPressed()"></app-dashboard>
+    </div>
+    <div *ngIf="showRecordPage==true">
+      <app-record-session (showDashboard)="backToDashboard()"></app-record-session>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

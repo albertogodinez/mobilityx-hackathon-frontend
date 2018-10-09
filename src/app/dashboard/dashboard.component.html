@@ -1,0 +1,92 @@
+<div fxLayout="wrap row" fxLayoutAlign="start center" fxLayoutGap="0.5%">
+    <div fxFlex="1 1 20%">
+      <mat-card class="example-card">
+        <img mat-card-image src="../../../images/profile_picture.png" alt="Default profile pic">
+        <mat-card-footer>
+          <mat-card-title style="text-align:center">Miranda Godinez</mat-card-title>
+          <mat-card-subtitle style="text-align:center">HR Generalist</mat-card-subtitle>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+    <div fxFlex="40%"></div>
+    <div fxFlex="30%">
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <h1 style="text-align:center">Level {{level}}</h1>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <h3 style="text-align:center">Level Progress</h3>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <mat-progress-bar mode="determinate" [value]=progress></mat-progress-bar>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <button style="width:100%" 
+              mat-stroked-button color="primary"
+              (click)="routeToRecord()"
+            >
+              PRACTICE NOW
+            </button>
+          </mat-list-item>
+      </mat-list>
+    </div>
+    <!--START OF NEW ROW-->
+    <div fxFlex="16.2%">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Total Number of Sessions</mat-card-title>
+          <mat-card-subtitle>{{dashboard.total_sessions}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div fxFlex="75%"></div>
+        <!--START OF NEW ROW-->
+        <div fxFlex="16.2%">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Minutes Practiced</mat-card-title>
+          <mat-card-subtitle>{{dashboard.minutes_practiced}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div fxFlex="75%"></div>
+    <div fxFlex="16.2%">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Longest Streak</mat-card-title>
+          <mat-card-subtitle>{{dashboard.longest_streak}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div fxFlex="75%"></div>
+    <!--MORE INFORMATION WHERE WE COULD INCLUDE MORE DATA-->
+    <!-- <div fxFlex="60%">
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Personal data
+                </mat-panel-title>
+                <mat-panel-description>
+                  Type your name and age
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+    </div> -->
+
+</div>
+

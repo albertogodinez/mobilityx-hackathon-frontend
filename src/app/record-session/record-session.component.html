@@ -1,0 +1,50 @@
+<div *ngIf="!speechRecognitionService.listening">
+  <button mat-icon-button (click)="startRecording()">
+    <mat-icon>mic</mat-icon>
+  </button>
+</div>
+<div *ngIf="speechRecognitionService.listening">
+  <button mat-icon-button (click)="stopRecording()">
+    <mat-icon>mic_off</mat-icon>
+  </button>
+</div>
+
+
+<button mat-stroked-button color="primary" (click)="backToDashboard()">Back to Dashboard</button>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let session of sessions">
+        <mat-expansion-panel-header>
+          Session ID: {{session.sessionId}} 
+          -- Total Time: {{session.total_time}}
+          -- Word Count: {{session.word_count}}
+          -- Pace: {{session.pace}} WPM
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <p>{{session.transcript}}</p>
+        </mat-panel-description>
+      
+      </mat-expansion-panel>
+  <!-- <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel> -->
+</mat-accordion>
